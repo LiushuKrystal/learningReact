@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyList from './List';
+import TodoList from './TodoList';
+import { Provider } from 'react-redux';
+import store from './store';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <MyList />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = (
+    <Provider store={store}>
+        <TodoList/>
+    </Provider>
+)
+ReactDOM.render(App, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
